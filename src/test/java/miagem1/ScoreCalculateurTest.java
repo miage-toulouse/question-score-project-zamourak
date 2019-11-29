@@ -55,4 +55,30 @@ public class ScoreCalculateurTest {
         assertEquals(100f, resScore, 0.01f);
         reponsesEtudiant.clear();
     }
+    @Test
+    public void testCalculeScoreCas4() {
+        // when : on demande son énoncé à la question
+        reponsesEtudiant.add(1);
+        reponsesEtudiant.add(2);
+        reponsesEtudiant.add(3);
+        reponsesEtudiant.add(4);
+        reponsesEtudiant.add(5);
+        scoreCalculateur = new ScoreCalculateur();
+        float resScore = scoreCalculateur.calculeScore(reponsesEtudiant, questionAChoixMultiple);
+        // then : l'énoncé retourné est l'énoncé fournit à la construction de la question
+        assertEquals(0f, resScore, 0.01f);
+        reponsesEtudiant.clear();
+    }
+    @Test
+    public void testCalculeScoreCas5() {
+        // when : on demande son énoncé à la question
+        reponsesEtudiant.add(1);
+        reponsesEtudiant.add(2);
+        reponsesEtudiant.add(3);
+        scoreCalculateur = new ScoreCalculateur();
+        float resScore = scoreCalculateur.calculeScore(reponsesEtudiant, questionAChoixMultiple);
+        // then : l'énoncé retourné est l'énoncé fournit à la construction de la question
+        assertEquals(16.66f, resScore, 0.01f);
+        reponsesEtudiant.clear();
+    }
 }

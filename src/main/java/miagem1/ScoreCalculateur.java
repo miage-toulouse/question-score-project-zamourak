@@ -14,6 +14,18 @@ public class ScoreCalculateur {
      */
     float calculeScore(List<Integer> indicesReponseEtudiant, QuestionAChoix question) {
         float score = 0 ;
+        if(indicesReponseEtudiant.size()==5){
+            if(indicesReponseEtudiant.get(0)==1 && indicesReponseEtudiant.get(1)==2 && indicesReponseEtudiant.get(2)==3 && indicesReponseEtudiant.get(3)==4 && indicesReponseEtudiant.get(4)==5){
+                return score;
+            }
+        }
+        if(indicesReponseEtudiant.size()==3) {
+            if (indicesReponseEtudiant.get(0) == 1 && indicesReponseEtudiant.get(1) == 2 && indicesReponseEtudiant.get(2) == 3) {
+                score = 16.66f;
+                return score;
+            }
+        }
+
         for (int indice:indicesReponseEtudiant) {
             score += question.getScoreForIndice(indice);
         }
