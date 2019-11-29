@@ -11,7 +11,7 @@ public class QuestionAChoixExclusifTest {
 
     @Before
     public void setUp() throws Exception {
-        // given : une instande de question à choix exclusif
+        // given : une instance de question à choix exclusif
         question = new QuestionAChoixExclusif("un énoncé", 2);
     }
 
